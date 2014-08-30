@@ -1,0 +1,91 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html{
+	height: 100%;
+}
+body{
+	font-family: 'Lato', 'sans-serif';  
+	background: url(../img/bg.jpg) center center no-repeat;
+	background-size: cover;
+	height: 100%;
+	background-attachment: fixed;
+}
+.clearfix{
+	clear: both;
+}
+.container{
+	width: 900px;
+	margin: 0 auto;
+}
+	.wrapper{
+		width: 860px;
+		margin: 0 auto;
+	}
+		#newTask{
+			margin-top: 20px;
+			height: 60px;
+			background: rgba( 0, 0, 0, .7); 
+			width: 860px;
+			border: none;
+			outline: none;
+			border-radius: 5px;
+			color: #fff;
+			text-indent: 20px;
+			font-size: 30px;
+		}
+			::-webkit-input-placeholder{
+				color: #fff;
+			}
+		.tasks-count{
+			background: rgba( 0, 0, 0, .7);
+			line-height: 25px;
+			margin-top: 10px;
+			color: #d6d6d6;
+			font-size: 18px;
+			padding-left: 20px;
+			padding-right: 20px; 
+			border-radius: 5px;
+			display: inline-block;
+		}	
+		.task{
+			background: #fff;
+			height: 50px;
+			margin-top: 10px;
+			border-radius: 5px;
+		}
+			.done{
+				background: rgba(251, 251, 251, .7);
+			}
+				.done p{
+					text-decoration: line-through;
+				}
+			input[type="checkbox"]{
+				display: none;
+			}
+				input[type="checkbox"] + label span{
+					display: inline-block;
+					overflow: visible;
+					height: 18px;
+					width: 18px;
+					margin: 16px 20px 0;
+					float: left;
+					cursor: pointer;
+					border: 1px solid #979797;
+					border-radius: 3px;
+				}
+				input[type="checkbox"]:checked + label span{
+					background: url(../img/check.png)center center no-repeat;
+				}
+			.task p{
+				line-height: 50px;
+				font-size: 18px; 
+				float: left;
+			}
+			.important{
+				cursor: pointer;
+				margin-right: 20px;
+				float: right;
+				margin-top: 15px;
+			}	
