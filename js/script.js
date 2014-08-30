@@ -53,6 +53,9 @@ function show(){
 	var p = $('<p></p>').text(v.body);
 	p.appendTo(t);
 
+	var btn = $('<button>Delete</button>').addClass('btn');
+	btn.appendTo(t);
+
 	var s = $('<div></div>').addClass('important');
 	var color = '';
 	if(v.starred){
@@ -69,9 +72,10 @@ function show(){
 	c.appendTo(t);
 
 	t.appendTo($('.tasks'));
-	localStorage.setItem( 'tasks', JSON.stringify( tasks ) );
+	
 });
-
+localStorage.setItem( 'tasks', JSON.stringify( tasks ) );
+	console.log('save', JSON.stringify( tasks ))
 };
 show();
 
@@ -125,6 +129,15 @@ $(document).on('click', '.important', function() {
 		
 	}
 		
+	$('.tasks').html('');
+	show();
+});
+$(document).on('click', '.btn', function() {
+
+	var index = $(this).parent().data('index');
+	tasks.splice(index , 1);
+	
+
 	$('.tasks').html('');
 	show();
 });

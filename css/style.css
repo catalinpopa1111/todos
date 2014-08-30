@@ -89,3 +89,22 @@ body{
 				float: right;
 				margin-top: 15px;
 			}	
+			.btn{
+				border: none;
+				border-radius: 5px;
+				height: 25px;
+				padding: 0 5px;
+				float: right;
+				margin-top: 12px;
+				background: #e70b0b;
+				cursor: pointer;
+				outline: none;
+				margin-right: 20px;
+				color: #fff;
+				border-bottom: 2px solid #970202;
+			}
+			.btn:active{
+				border-bottom: none;
+				margin-top: 14px;
+			}
+			
