@@ -54,6 +54,7 @@ body{
 			height: 50px;
 			margin-top: 10px;
 			border-radius: 5px;
+			position: relative;
 		}
 			.done{
 				background: rgba(251, 251, 251, .7);
@@ -89,7 +90,8 @@ body{
 				float: right;
 				margin-top: 15px;
 			}	
-			.btn{
+			.btn,
+			.edit-btn{
 				border: none;
 				border-radius: 5px;
 				height: 25px;
@@ -103,8 +105,23 @@ body{
 				color: #fff;
 				border-bottom: 2px solid #970202;
 			}
-			.btn:active{
+			.btn:active,
+			.edit-btn:active{
 				border-bottom: none;
 				margin-top: 14px;
 			}
-			
+			.edit-btn{
+				background: #39c5f3;
+				border-bottom: 2px solid #2783a1;
+			}
+			.edit-input{
+				height: 50px;
+				width: 860px;
+				border: none;
+				border-radius: 5px;
+				outline: none;
+				position: absolute;
+				top: 0;
+				text-indent: 20px;
+				font-size: 18px;
+			}

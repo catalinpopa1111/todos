@@ -56,6 +56,9 @@ function show(){
 	var btn = $('<button>Delete</button>').addClass('btn');
 	btn.appendTo(t);
 
+	var ed = $('<button>Edit</button>').addClass('edit-btn');
+	ed.appendTo(t);
+
 	var s = $('<div></div>').addClass('important');
 	var color = '';
 	if(v.starred){
@@ -75,7 +78,7 @@ function show(){
 	
 });
 localStorage.setItem( 'tasks', JSON.stringify( tasks ) );
-	console.log('save', JSON.stringify( tasks ))
+	
 };
 show();
 
@@ -140,4 +143,24 @@ $(document).on('click', '.btn', function() {
 
 	$('.tasks').html('');
 	show();
+});
+$(document).on('click', '.edit-btn', function () {
+	var index = $(this).parent().data('index');
+	var f = $('<form></form>').addClass('edit-form');
+	var e = $('<input/>').addClass('edit-input').attr({
+		'name': 'edit-input',
+		'type': 'text',
+		'value': tasks[ $(this).parent().data('index') ].body
+	});
+	e.appendTo(f);
+	f.appendTo($(this).parent());
+});
+$(document).on('submit', '.edit-form', function (e) {
+	e.preventDefault();
+	
+	tasks[ $(this).parent().data('index') ].body = $('.edit-input').val();
+
+	$('.tasks').html('');
+	show();
+
 });
